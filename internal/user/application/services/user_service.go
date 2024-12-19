@@ -7,10 +7,10 @@ import (
 )
 
 type UserServiceImpl struct {
-	repo output.UserRepository
+	repo output.UserPersistence
 }
 
-func NewUserServiceImpl(repo output.UserRepository) input.UserService {
+func NewUserServiceImpl(repo output.UserPersistence) input.UserService {
 	return &UserServiceImpl{repo: repo}
 }
 
@@ -31,7 +31,7 @@ func (s *UserServiceImpl) Read(id int) *domain.User {
 }
 
 func (s *UserServiceImpl) Create(user *domain.User) (*domain.User, error) {
-	user, err := s.repo.Save(user)
+	user, err := s.repo.Create(user)
 	if err != nil {
 		return nil, err
 	}
