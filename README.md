@@ -50,7 +50,25 @@ Antes de comenzar, asegúrate de tener instalados:
    go run main.go
    ```
 
-3. La aplicación estará disponible por defecto en:
+   Para mantener el proyecto en ejecución, puede instalar la herramienta `air`:
+
+   ```bash
+   go install github.com/cosmtrek/air@latest
+   ```
+
+   Luego, en la carpeta del proyecto, ejecute:
+
+   ```bash
+   air init
+   ```
+
+   Seguido del comando:
+
+   ```bash
+   air
+   ```
+
+3. Si en caso no se estableciera el puerto en las variables de entorno, se utilizará el puerto `8080`.
 
    ```
    http://localhost:8080
